@@ -2,14 +2,13 @@ package examples.tests;
 
 import com.intuit.karate.junit5.Karate;
 
-class Runner {
+public class Runner {
     @Karate.Test
-    public Karate runUser() {
-        return Karate.run("userRequest").relativeTo(getClass());
-    }
-
-    @Karate.Test
-    public Karate runpet() {
+    public Karate runPet(){
         return Karate.run("petRequest").relativeTo(getClass());
+    }
+    @Karate.Test
+    public Karate runUser(){
+        return Karate.run("userRequest").relativeTo(getClass());
     }
 }
