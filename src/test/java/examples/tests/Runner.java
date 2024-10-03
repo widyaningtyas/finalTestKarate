@@ -4,11 +4,17 @@ import com.intuit.karate.junit5.Karate;
 
 public class Runner {
     @Karate.Test
-    public Karate runPet(){
+    public Karate runPet() {
         return Karate.run("petRequest").relativeTo(getClass());
     }
+
     @Karate.Test
-    public Karate runUser(){
+    public Karate runUser() {
         return Karate.run("userRequest").relativeTo(getClass());
+    }
+
+    @Karate.Test
+    public Karate runStore() {
+        return Karate.run("storeRequest").relativeTo(getClass());
     }
 }
