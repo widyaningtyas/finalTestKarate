@@ -7,14 +7,9 @@ public class RunnerSpoonacular {
 //    public Karate runConnectUser() {
 //        return Karate.run("connectUser").relativeTo(getClass());
 //    }
-//
-//    @Karate.Test
-//    public Karate runMealPlanRequest() {
-//        return Karate.run("mealPlanRequest").tags("@test").relativeTo(getClass());
-//    }
 
     @Karate.Test
-    public Karate runRecipeRequest() {
-        return Karate.run("recipeRequest").relativeTo(getClass());
+    public Karate runMealPlanRequest() {
+        return Karate.run("mealPlanRequest").tags("@test").relativeTo(getClass());
     }
 }
