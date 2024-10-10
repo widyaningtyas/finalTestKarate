@@ -17,7 +17,7 @@ Feature: Recipe Request
     Then status 200
     And print response
 
-  Scenario: Get Recipe Ingredient List
+  Scenario: Get Ingredients by ID
     #Get random recipe first to get the id
     Given path 'recipes/random'
     And header Content-Type = 'application/json'
