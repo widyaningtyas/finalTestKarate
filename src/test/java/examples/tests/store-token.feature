@@ -1,5 +1,5 @@
-Feature: Store Token
+Feature: Store token
 
-  Scenario: Store OAuth Token
-    * def accessToken = __arg.accessToken
+  Scenario: Store OAuth token
+    * def accessToken = karate.get('accessToken')
     * karate.set('bearerToken', accessToken)

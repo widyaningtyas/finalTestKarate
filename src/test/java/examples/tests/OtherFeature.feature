@@ -1,9 +1,14 @@
-Feature: Other features that use bearer token
+Feature: Other feature that use bearer token
 
   Background:
-    * def token = karate.get('BearerToken')
-    * def authHeader = {Authorization: 'Bearer ' + '#(token)'}
+    * def tokenResponse = karate.callSingle('classpath:examples/tests/store-token.feature')
+    * def bearerToken = tokenResponse.bearerToken
 
-  Scenario: Get Bearer Token
-    Given url 'https://blabla.com'
-    And headers authHeader
+  Scenario:
+    Given url 'https://task-manager-farah-8490b8468a02.herokuapp.com/api/tasks'
+    And header Content-Type = 'application/json'
+    And header Authorization = 'Bearer ' + bearerToken
+    And request {"title": "Sample task2","description": "this is simple task","owner": "Test"}
+    When method POST
+    Then status 201
+    And print response
